@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./styles";
 
-const Header = () => {
+const Header = ({searchId, setSearchId, searchName, setSearchName}) => {
   const pokemontypesArray = [
     "Normal",
     "Fire",
@@ -25,8 +25,8 @@ const Header = () => {
 
   return (
     <Container>
-      <input type="number" placeholder="Buscar por id" />
-      <input type="text" placeholder="Buscar por nome" />
+      <input type="number" placeholder="Buscar por id" value={searchId} onChange={(event) =>setSearchId(event.target.value)}/>
+      <input type="text" placeholder="Buscar por nome" value={searchName} onChange={(event) =>setSearchName(event.target.value)}/>
       <select>
         <option value="">Ordenar</option>
         <option value="">Crescente</option>
